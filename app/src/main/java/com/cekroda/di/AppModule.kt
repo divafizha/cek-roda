@@ -7,6 +7,7 @@ import com.cekroda.data.repository.InspectionRepositoryImpl
 import com.cekroda.presentation.home.HomeViewModel
 import org.koin.core.module.dsl.viewModel
 import org.koin.dsl.module
+import com.google.firebase.analytics.FirebaseAnalytics
 
 val appModule = module {
     single {
@@ -18,6 +19,9 @@ val appModule = module {
     single { get<AppDatabase>().inspectionDao() }
 
     single<InspectionRepository>{ InspectionRepositoryImpl(get()) }
+
+    single { FirebaseAnalytics.getInstance(get()) }
+    }
 
     viewModel { HomeViewModel(get()) }
 }
