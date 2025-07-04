@@ -90,4 +90,5 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
     implementation(libs.firebase.crashlytics)
+    implementation("com.google.firebase:firebase-analytics-ktx")
 }
